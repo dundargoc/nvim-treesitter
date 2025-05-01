@@ -54,12 +54,7 @@ jobs:
       - name: Check parsers
         run: $NVIM -l ./scripts/check-parsers.lua
 
-      - name: Check queries (nvim)
-        if: ${{ matrix.os == 'windows-latest' }}
-        run: $NVIM -l ./scripts/check-queries.lua
-
       - name: Check queries (tsqueryls)
-        if: ${{ matrix.os != 'windows-latest' }}
         run: make checkquery
 
       - name: Run highlight tests
